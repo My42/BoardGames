@@ -10,7 +10,8 @@ import reducers from './reducers';
 
 const store = createStore(
   reducers,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  // eslint-disable-next-line no-undef
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 );
 
 ReactDOM.render(
@@ -19,6 +20,7 @@ ReactDOM.render(
       <App />
     </Provider>
   ),
+  // eslint-disable-next-line no-undef
   document.getElementById('root'),
 );
 

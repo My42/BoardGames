@@ -1,0 +1,17 @@
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "jsx-a11y/anchor-is-valid": [0],
+    "react/sort-prop-types": [2, { "sortShapeProp": true }],
+    "react/jsx-sort-props": [2, { "ignoreCase": true }],
+    "react/jsx-max-props-per-line": [2, { "maximum": 1, "when": "multiline" }],
+    "object-curly-newline": ["error", { "multiline": true }],
+    "no-cond-assign": [0, { "except-parens": true }],
+    "consistent-return": "off",
+    "no-underscore-dangle": "off",
+    "no-shadow": "off",
+    "import/no-named-as-default": "off"
+  }
+}

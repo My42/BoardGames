@@ -1,16 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { colors } from '../../const'
+import { colors } from '../../const';
 import H1 from '../atoms/H1';
 
 const GameCard = ({ name, Img, onClick }) => (
-    <MainDiv onClick={onClick}>
-        <GameImg src={Img} alt={`name`} />
-        <NameDiv>
-            <GameName>{name}</GameName>
-        </NameDiv>
-    </MainDiv>
+  <MainDiv onClick={onClick}>
+    <GameImg alt="name" src={Img} />
+    <NameDiv>
+      <GameName>{name}</GameName>
+    </NameDiv>
+  </MainDiv>
 );
 
 const MainDiv = styled.div`
@@ -38,9 +38,9 @@ const GameName = styled(H1)`
 `;
 
 GameCard.propTypes = {
-    name: PropTypes.string.isRequired,
-    Img: PropTypes.node.isRequired,
-    onClick: PropTypes.func.isRequired,
+  Img: PropTypes.node.isRequired,
+  name: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default GameCard;

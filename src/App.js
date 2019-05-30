@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Route exact path="/" component={Index} />
+        <Route component={Index} exact path="/" />
       </Router>
     </div>
   );

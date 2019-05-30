@@ -2,10 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import GameCard from '../features/GameCardContainer';
 import games from '../const/games';
+import H1 from '../ux/atoms/H1';
 
 const IndexPage = () => (
   <MainDiv>
-    <h1>BoardGames.io</h1>
+    <H1>BoardGames.io</H1>
     <GameCardsDiv>
       {
         games.map(({ name, Img, link }) => (

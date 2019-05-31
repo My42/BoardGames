@@ -5,11 +5,6 @@ import {
 } from './actions';
 
 const defaultState = {
-  board: [
-    null, null, null,
-    null, null, null,
-    null, null, null,
-  ],
   playerTurn: 0,
   winner: null,
 };

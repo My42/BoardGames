@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { TicTacToeCell } from '../molecules';
 
-const TicTacToeBoard = ({ board, playerTurn, generateHandleClick }) => {
-  return (
-    <MainDiv>
-      {
+const TicTacToeBoard = ({ board, playerTurn, generateHandleClick }) => (
+  <MainDiv>
+    {
         board.map((row, y) => (
           <RowDiv key={y}>
             {
@@ -22,9 +21,8 @@ const TicTacToeBoard = ({ board, playerTurn, generateHandleClick }) => {
           </RowDiv>
         ))
       }
-    </MainDiv>
-  );
-};
+  </MainDiv>
+);
 
 const MainDiv = styled.div`
   display: flex;
@@ -36,7 +34,8 @@ const RowDiv = styled.div`
 `;
 
 TicTacToeBoard.propTypes = {
-  board: PropTypes.arrayOf(PropTypes.number).isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  board: PropTypes.array.isRequired,
   generateHandleClick: PropTypes.func.isRequired,
   playerTurn: PropTypes.number.isRequired,
 };

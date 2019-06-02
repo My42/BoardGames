@@ -9,8 +9,8 @@ const IndexPage = () => (
     <H1>BoardGames.io</H1>
     <GameCardsDiv>
       {
-        games.map(({ name, Img, link }) => (
-          <GameCard Img={Img} name={name} redirectTo={link} />
+        games.map(({ name, Img, link }, index) => (
+          <GameCard Img={Img} key={index} name={name} redirectTo={link} />
         ))
       }
     </GameCardsDiv>

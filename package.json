@@ -1,0 +1,10 @@
+{
+  "name": "boardgames",
+  "version": "1.0.0",
+  "repository": "git@github.com:My42/BoardGames.git",
+  "author": "Vincent Mesquita <vincent.mesquita@epitech.eu>",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn --cwd ./packages/client start "
+  }
+}

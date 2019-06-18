@@ -5,6 +5,9 @@
   "repository": "git@github.com:My42/BoardGames.git",
   "author": "Vincent Mesquita <vincent.mesquita@epitech.eu>",
   "license": "MIT",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
   "dependencies": {
     "express": "^4.17.1",
     "lodash": "^4.17.11",

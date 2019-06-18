@@ -1,5 +1,3 @@
 const addPlayer = require('./addPlayer');
 
-module.exports = {
-  addPlayer,
-};
+module.exports = { addPlayer };

@@ -6,6 +6,7 @@ import isNull from 'lodash/isNull';
 import { TicTacToeBoard } from '../ux/organisms';
 import { Button } from '../ux/atoms';
 import colors from '../const/colors';
+import MatchmakingModalContainer from '../features/MatchmakingModalContainer';
 
 class TicTacToe extends Component {
   constructor(props) {
@@ -75,6 +76,7 @@ class TicTacToe extends Component {
               { `Player ${winner + 1}` }
             </WinnerNameText>
           </WinnerDiv>
+          <MatchmakingModalContainer />
         </InfoDiv>
       </MainDiv>
     );
@@ -99,7 +101,7 @@ const WinnerDiv = styled.div`
   justify-content: center;
   border: 1px solid ${colors.secondary}
   height: 100px
-  margin-top: 5px;
+  margin: 5px 0;
 `;
 
 const WinnerText = styled.span`

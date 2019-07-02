@@ -10,7 +10,7 @@ module.exports = (io, socketIds) => {
     logger.info(`someone connected on ${socketIds.join('')} namespace`);
     socket.emit('game_join_succeeded');
 
-    socket.on('game_ready', () => game.addPlayer(socket.id, 'Bjorn'));
+    socket.on('game_ready', () => game.addPlayer(socket.id, socket));
 
     socket.on('disconnect', () => {
       logger.info(`someone disconnected on ${socketIds.join('')} namespace`);

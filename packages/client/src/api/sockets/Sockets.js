@@ -1,5 +1,5 @@
 import io from 'socket.io-client';
-
+import isNil from 'lodash/isNil';
 
 class Sockets {
   connect(url) {
@@ -8,12 +8,14 @@ class Sockets {
   }
 
   close() {
-    this.socket.close();
-    this.socket = null;
+    if (this.isConnected()) {
+      this.socket.close();
+      this.socket = null;
+    }
   }
 
   isConnected() {
-    return this.socket === null;
+    return !isNil(this.socket);
   }
 
   emit(name, data = { }) {

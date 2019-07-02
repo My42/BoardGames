@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import flatten from 'lodash/flatten';
 import isNull from 'lodash/isNull';
 import { TicTacToeBoard } from '../ux/organisms';
 import { Button } from '../ux/atoms';
-import colors from '../const/colors';
+import { colors, games } from '../const';
+import { indexes } from '../const/games';
 import MatchmakingModalContainer from '../features/MatchmakingModalContainer';
 
 class TicTacToe extends Component {
@@ -76,7 +77,7 @@ class TicTacToe extends Component {
               { `Player ${winner + 1}` }
             </WinnerNameText>
           </WinnerDiv>
-          <MatchmakingModalContainer />
+          <MatchmakingModalContainer idGame={games[indexes.ticTacToe].id} />
         </InfoDiv>
       </MainDiv>
     );

@@ -8,6 +8,6 @@ module.exports = (socket) => {
   const gameId = cache.get(cacheKey);
   cache.del(cacheKey);
 
-  const socketIds = cache.get(gameId);
+  const socketIds = cache.get(gameId) || [];
   cache.set(gameId, socketIds.filter(id => id !== socket.id));
 };

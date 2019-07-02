@@ -6,9 +6,10 @@ module.exports = (io, socketIds) => {
   const nsp = io.of(namespace);
   nsp.on('connection', (socket) => {
     logger.info(`someone connected on ${socketIds.join('')} namespace`);
+    socket.emit('game_join_succeeded');
     socket.on('disconnect', () => {
       logger.info(`someone disconnected on ${socketIds.join('')} namespace`);
-      nsp.emit('game_player_left', socket.id);
+      nsp.emit('game_canceled');
     });
   });
   socketIds.forEach((id) => {

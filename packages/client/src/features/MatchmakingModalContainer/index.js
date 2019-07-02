@@ -35,11 +35,12 @@ class MatchmakingModalContainer extends Component {
     this.gameSocket.connect(lobbyId);
     // this.gameSocket.onJoinSucceeded(() => this.setState({ step: 2 }));
     this.gameSocket.onGameCanceled(() => this._handleGameCanceled());
-    this.setState({ step: 1, lobbyId });
+    this.setState({ step: 1 });
   };
 
   onReady = () => {
-    const { lobbyId } = this.state;
+    this.gameSocket.ready();
+    this.setState({ step: 2 });
   };
 
   toggleModal = () => this.setState(({ isOpen }) => {

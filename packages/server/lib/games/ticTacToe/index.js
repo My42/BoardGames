@@ -7,7 +7,10 @@ class TicTacToe {
   }
 
   addPlayer(socketId, name) {
+    logger.info('[TicTacToe] add player', { socketId, name, players: this.players });
+    if (this.isCurrentlyPaying()) return;
     this.players.push({ socketId, name });
+    if (this.isCurrentlyPaying()) this.startGame();
   }
 
   removePlayer(socketId) {
@@ -18,7 +21,7 @@ class TicTacToe {
     logger.info('[TicTacToe] Start game');
   }
 
-  canTheGameStart() {
+  isCurrentlyPaying() {
     return this.NBR_REQUIRED_PLAYER === this.players.length;
   }
 }

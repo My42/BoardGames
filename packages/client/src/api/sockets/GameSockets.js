@@ -13,6 +13,10 @@ class GameSockets extends Socket {
   onGameCanceled(cb) {
     super.on('game_canceled', cb);
   }
+
+  ready() {
+    super.emit('game_ready');
+  }
 }
 
 export default GameSockets;

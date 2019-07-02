@@ -5,9 +5,13 @@ module.exports = (io, socketIds) => {
   const namespace = `/${socketIds.join('')}`;
   logger.info('New namespace created: %s', namespace);
   const nsp = io.of(namespace);
+  const game = new TicTacToe();
   nsp.on('connection', (socket) => {
     logger.info(`someone connected on ${socketIds.join('')} namespace`);
     socket.emit('game_join_succeeded');
+
+    socket.on('game_ready', () => game.addPlayer(socket.id, 'Bjorn'));
+
     socket.on('disconnect', () => {
       logger.info(`someone disconnected on ${socketIds.join('')} namespace`);
       nsp.emit('game_canceled');

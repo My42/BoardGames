@@ -6,19 +6,21 @@ class TicTacToe {
     this.players = [];
   }
 
-  addPlayer = (socketId, name) => {
+  addPlayer(socketId, name) {
     this.players.push({ socketId, name });
-  };
+  }
 
-  removePlayer = (socketId) => {
+  removePlayer(socketId) {
     this.players = this.players.filter(player => player.socketId === socketId);
-  };
+  }
 
-  startGame = () => {
+  startGame() {
     logger.info('[TicTacToe] Start game');
-  };
+  }
 
-  canTheGameStart = () => this.NBR_REQUIRED_PLAYER === this.players.length;
+  canTheGameStart() {
+    return this.NBR_REQUIRED_PLAYER === this.players.length;
+  }
 }
 
 export default TicTacToe;

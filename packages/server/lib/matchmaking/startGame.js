@@ -1,4 +1,5 @@
 const logger = require('../logger');
+const TicTacToe = require('../games/ticTacToe');
 
 module.exports = (io, socketIds) => {
   const namespace = `/${socketIds.join('')}`;

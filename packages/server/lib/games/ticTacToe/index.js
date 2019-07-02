@@ -19,7 +19,7 @@ class TicTacToe {
 
   startGame() {
     logger.info('[TicTacToe] Start game');
-    this.players.forEach(() => {  });
+    this.players.forEach(({ socket }) => socket.emit('game_start'));
   }
 
   isCurrentlyPaying() {

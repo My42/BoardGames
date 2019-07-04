@@ -35,12 +35,12 @@ class MatchmakingModalContainer extends Component {
     this.gameSocket.connect(lobbyId);
     // this.gameSocket.onJoinSucceeded(() => this.setState({ step: 2 }));
     this.gameSocket.onGameCanceled(() => this._handleGameCanceled());
-    this.setState({ step: 1 });
+    this.setState(this.goToNextStep);
   };
 
   onReady = () => {
     this.gameSocket.ready();
-    this.setState({ step: 2 });
+    this.setState(this.goToNextStep);
   };
 
   toggleModal = () => this.setState(({ isOpen }) => {
@@ -74,6 +74,8 @@ class MatchmakingModalContainer extends Component {
   };
 
   handleCancel = () => this.toggleModal();
+
+  goToNextStep = ({ step }) => this.setState({ step: step + 1 });
 
   render() {
     const { isOpen, step } = this.state;
